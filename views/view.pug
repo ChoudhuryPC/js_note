@@ -1,0 +1,23 @@
+html
+link( href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet")
+style
+    include style.css
+body
+        a(href='notes-add/')
+            button(value="submit" ) Create New  
+        
+        ul 
+            each val in data
+             
+             li
+              p=val.title
+              img(src="/uploads/"+val.img.data ,alt="cant")
+              a(href="#",download="/uploads/"+val.img.data)
+                <button class="btn btn-primary">Download</button>
+              p=val._id
+              p=val.mail
+              p=val.description
+              a(href='delete/' + val._id)
+               button(value='submit') Delete this
+              a(href='updatepage/' + val._id)
+                button(value='submit') Update
